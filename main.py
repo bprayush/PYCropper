@@ -1,6 +1,7 @@
 #! /usr/bin/python3
 
 from PIL import Image
+import os
 
 image = Image.open("Pokemon.jpg")
 
@@ -16,6 +17,10 @@ backgroundColor = (250, 250, 250)
 path = "exported/"
 spriteFolder = "pokemon/"
 
+if not os.path.exists(path):
+    os.mkdir(path)
+if not os.path.exists(path + spriteFolder):
+    os.mkdir(path + spriteFolder)
 counter = 1
 
 for left in range(0, cropWidth * horizontalNumber, cropWidth):
